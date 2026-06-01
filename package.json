@@ -1,0 +1,13 @@
+{
+  "name": "canvas-assignment-reminder",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Password-protected Canvas assignment calendar and reminder dashboard.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}

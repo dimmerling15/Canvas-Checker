@@ -1,0 +1,6 @@
+{
+  "canvasBaseUrl": "https://mcpsmd.instructure.com",
+  "accessToken": "paste-your-canvas-token-here",
+  "lookAheadDays": 45,
+  "refreshMinutes": 15
+}

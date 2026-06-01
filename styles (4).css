@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Canvas Assignment Reminder</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">MCPS Canvas</p>
+        <h1>Assignment Reminder</h1>
+      </div>
+      <div class="actions">
+        <button id="notifyButton" class="ghost" type="button" title="Enable reminder notifications">
+          <span>Notifications</span>
+        </button>
+        <button id="refreshButton" type="button" title="Refresh Canvas assignments">
+          <span>Refresh</span>
+        </button>
+        <button id="jumpButton" class="ghost" type="button" title="Jump to the next due assignment">
+          <span>Next Due</span>
+        </button>
+        <button id="logoutButton" class="ghost" type="button" title="Sign out">
+          <span>Sign Out</span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <nav class="tabs" aria-label="Dashboard views">
+        <button id="calendarTab" class="tab active" type="button">Calendar</button>
+        <button id="checklistTab" class="tab" type="button">Checklist</button>
+      </nav>
+
+      <section class="status">
+        <div>
+          <span class="label">Next due</span>
+          <strong id="nextDue">Loading...</strong>
+        </div>
+        <div>
+          <span class="label">Open items</span>
+          <strong id="openCount">0</strong>
+        </div>
+        <div>
+          <span class="label">Last checked</span>
+          <strong id="lastChecked">Never</strong>
+        </div>
+        <div>
+          <span class="label">Reminder lead time</span>
+          <select id="leadTime" title="Reminder lead time">
+            <option value="30">30 minutes</option>
+            <option value="60">1 hour</option>
+            <option value="180">3 hours</option>
+            <option value="1440">1 day</option>
+            <option value="2880">2 days</option>
+          </select>
+        </div>
+      </section>
+
+      <section id="errorBox" class="error" hidden></section>
+
+      <section id="calendarView" class="workspace view active">
+        <div class="calendarPanel">
+          <div class="calendarHeader">
+            <button id="prevMonth" class="iconButton" type="button" title="Previous month">&lt;</button>
+            <h2 id="monthTitle">Month</h2>
+            <button id="nextMonth" class="iconButton" type="button" title="Next month">&gt;</button>
+          </div>
+          <div class="weekdays">
+            <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span>
+          </div>
+          <div id="calendarGrid" class="calendarGrid"></div>
+        </div>
+
+        <aside class="listPanel">
+          <div class="listHeader">
+            <h2>Upcoming</h2>
+            <label>
+              <input id="hideSubmitted" type="checkbox" checked>
+              Hide submitted
+            </label>
+          </div>
+          <div id="assignmentList" class="assignmentList"></div>
+        </aside>
+      </section>
+
+      <section id="checklistView" class="checklistView view">
+        <div class="checklistHeader">
+          <h2>Assignments by Class</h2>
+          <label>
+            <input id="checklistHideDone" type="checkbox" checked>
+            Hide checked
+          </label>
+        </div>
+        <div id="classChecklist" class="classChecklist"></div>
+      </section>
+    </main>
+
+    <script src="/app.js"></script>
+  </body>
+</html>

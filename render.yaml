@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: canvas-assignment-reminder
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: CANVAS_BASE_URL
+        value: https://mcpsmd.instructure.com
+      - key: CANVAS_ACCESS_TOKEN
+        sync: false
+      - key: DASHBOARD_PASSWORD
+        sync: false
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: LOOK_AHEAD_DAYS
+        value: "45"
+      - key: REFRESH_MINUTES
+        value: "15"
